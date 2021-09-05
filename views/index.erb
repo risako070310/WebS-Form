@@ -3,8 +3,78 @@
 <head>
 	<meta charset="UTF-8">
 	<title>アンケートフォーム</title>
+	
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" 
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" 
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 </head>
 <body>
-	<p>ここにフォームを作っていきます</p>
+	<a href="/answers">結果一覧</a>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span class="glyphicon glyphicon-triangle-right"></span>
+					アンケートフォーム
+				</div>
+				<div class="panel-body">
+					<form action="/answers" method="post">
+						<div class="form-group">
+							名前<br>
+							<input type="text" name="name" placeholder="ここに名前を入力">
+						</div>
+						<div class="form-group">
+							年齢<br>
+							<input type="number" name="age" placeholder="ここに年齢を入力">
+						</div>
+						<div class="form-group">
+							学年<br>
+							<select name="grade">
+								<option value="中1">中学1年</option>
+								<option value="中2">中学2年</option>
+								<option value="中3">中学3年</option>
+								<option value="高1">高校1年</option>
+								<option value="高2">高校2年</option>
+								<option value="高3">高校3年</option>
+							</select>
+						</div>
+						<div class="form-group">
+							性別<br>
+							<input type="radio" name="gender" value="man" checked>男</input>
+							<input type="radio" name="gender" value="woman">女</input>
+						</div>
+						<div class="form-group">
+							メールアドレス(必須)<br>
+							<input type="email" name="email" placeholder="メールアドレスを入力" required>
+						</div>
+						<div class="form-group">
+							日付<br>
+							<input type="date" name="date">
+						</div>
+						<div class="form-group">
+							パスワード(必須)<br>
+							<input type="password" name="password" placeholder="パスワードを入力" required>
+						</div>
+						<div class="form-group">
+							感想・質問・その他<br>
+							<textarea name="content" rows="4" cols="40" placeholder="その他乾燥や質問はこちら"></textarea>
+						</div>
+						<input type="submit" class="btn btn-primary pull-left"></input>
+						<input type="reset" class="btn btn-warning pull-left"></input>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
